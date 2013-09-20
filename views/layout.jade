@@ -1,7 +1,15 @@
-doctype 5
+!!!
 html
-  head
-    title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
-  body
-    block content
+    head
+        //- Output page title
+        title= " @ Phoodies"
+
+        //- Include CSS
+        link(rel='stylesheet', type='text/css', href='/stylesheets/foundation.min.css')
+        link(rel='stylesheet', type='text/css', href='/stylesheets/style.css')
+        link(rel='stylesheet', type='text/css', href='http://fonts.googleapis.com/css?family=Actor')
+
+    body
+        .wrap
+            .container
+                .content
