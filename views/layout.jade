@@ -4,12 +4,18 @@ html
         //- Output page title
         title= " @ Phoodies"
 
-        //- Include CSS
+        //- Include CSS and Foundation
         link(rel='stylesheet', type='text/css', href='/stylesheets/foundation.min.css')
         link(rel='stylesheet', type='text/css', href='/stylesheets/style.css')
         link(rel='stylesheet', type='text/css', href='http://fonts.googleapis.com/css?family=Actor')
+        script(src='/js/custom.modernizr.js')
 
+        block head
     body
-        .wrap
-            .container
-                .content
+        .
+            block content
+
+            include includes/javascripts
+
+
+

@@ -3,13 +3,27 @@
  * Module dependencies.
  */
 
-var express = require('express');
-var routes = require('./routes');
-var user = require('./routes/user');
-var http = require('http');
-var path = require('path');
+var 
+    express = require('express'),
+    app = express(),
+    routes = require('./routes'),
+    user = require('./routes/user'),
+    http = require('http'),
+    path = require('path'),
+    Poet = require('poet');
 
-var app = express();
+var poet = Poet(app, {
+    postsPerPage: 5,
+    posts: __dirname + '/_posts',
+    metaFormat: 'json'
+});
+
+poet
+    .createPostRoute()
+    .createPageRoute()
+    .createTagRoute()
+    .createCategoryRoute()
+    .init();
 
 // all environments
 app.set('port', process.env.PORT || 3000);
@@ -24,8 +38,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // development only
 if ('development' == app.get('env')) {
-  app.use(express.errorHandler());
+  app.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
 }
+
 
 app.get('/', routes.index);
 app.get('/users', user.list);
