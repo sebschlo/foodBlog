@@ -2,20 +2,41 @@
 html
     head
         //- Output page title
-        title= " @ Phoodies"
+        title= "Homemade Granola"
+        meta(charset='utf-8')
+        meta(name='viewport', content='width=device-width')
 
-        //- Include CSS and Foundation
-        link(rel='stylesheet', type='text/css', href='/stylesheets/foundation.min.css')
-        link(rel='stylesheet', type='text/css', href='/stylesheets/style.css')
-        link(rel='stylesheet', type='text/css', href='http://fonts.googleapis.com/css?family=Actor')
-        script(src='/js/custom.modernizr.js')
+        //- Include Foundation CSS and Modernizer.js
+        link(rel='stylesheet', type='text/css', href='/stylesheets/app.css')
+        link(rel='stylesheet', type='text/css', href='/stylesheets/extraStyle.css')
+        script(src='/javascripts/vendor/custom.modernizr.js')
 
         block head
     body
-        .
-            block content
+        block content
+        
+        //- Javascripts include
+        script.
+            document.write('<script src=/javascripts/vendor/' + ('__proto__' in {} ? 'zepto' : 'jquery') + '.js><\/script>');
 
-            include includes/javascripts
+        script(src="/javascripts/foundation/foundation.js")
+        script(src="/javascripts/foundation/foundation.alerts.js")
+        script(src="/javascripts/foundation/foundation.clearing.js")
+        script(src="/javascripts/foundation/foundation.cookie.js")
+        script(src="/javascripts/foundation/foundation.dropdown.js")
+        script(src="/javascripts/foundation/foundation.forms.js")
+        script(src="/javascripts/foundation/foundation.joyride.js")
+        script(src="/javascripts/foundation/foundation.magellan.js")
+        script(src="/javascripts/foundation/foundation.orbit.js")
+        script(src="/javascripts/foundation/foundation.placeholder.js")
+        script(src="/javascripts/foundation/foundation.reveal.js")
+        script(src="/javascripts/foundation/foundation.section.js")
+        script(src="/javascripts/foundation/foundation.tooltips.js")
+        script(src="/javascripts/foundation/foundation.topbar.js")
+        script(src="/javascripts/foundation/foundation.interchange.js")
+
+        script.
+            $(document).foundation();
 
 
 

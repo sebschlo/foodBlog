@@ -12,20 +12,19 @@ var
     path = require('path'),
     Poet = require('poet');
 
+
+// Set up Poet
 var poet = Poet(app, {
-    postsPerPage: 5,
-    posts: __dirname + '/_posts',
-    metaFormat: 'json'
+    // postsPerPage: 5,
+    // posts: __dirname + '/_posts',
+    // metaFormat: 'json'
 });
 
-poet
-    .createPostRoute()
-    .createPageRoute()
-    .createTagRoute()
-    .createCategoryRoute()
-    .init();
+poet.init().then(function () {
+    // initialized
+});
 
-// all environments
+// Set up all environments
 app.set('port', process.env.PORT || 3000);
 app.set('views', __dirname + '/views');
 app.set('view engine', 'jade');

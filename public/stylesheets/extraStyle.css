@@ -1,0 +1,10 @@
+
+
+#homepage-title 
+{
+    color: #593718;
+}
+
+.transparent {
+    @include opacity(0);
+}

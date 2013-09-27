@@ -2,12 +2,38 @@
 extends layout
 
 block content
-    h1 NAME OF BLOG
+    //- Main View
+    .row
+        //- Left Side
+        #homeContainer.large-6.columns
+            img(src="/images/title.png")
 
-    - var posts = getPosts(0,3)
-    - var page = 1
-    - each post in posts
-        include includes/postSnippet
+            include includes/navBar
 
-    include includes/pagination
+
+            - var posts = getPosts(0,1)
+            - var page = 1
+            - each post in posts
+                include includes/postSnippet
+
+        //- Right Side
+        #homeSlideshow.large-6.columns
+            div.row
+                a.th.radius.large-4.columns(href="/images/post1/1.jpg" style="background-image: url(/images/post1.jpg")
+                    img(src="/images/post1/1.jpg")
+                a.th.radius.large-4.columns(href="/images/post1/2.jpg")
+                    img(src="/images/post1/2.jpg")
+                a.th.radius.large-4.columns(href="/images/post1/3.jpg")
+                    img(src="/images/post1/3.jpg")
+
+                a.th.radius.large-6.columns(href="/images/post1/4.jpg")
+                    img(src="/images/post1/4.jpg")
+                a.th.radius.large-6.columns(href="/images/post1/5.jpg")
+                    img(src="/images/post1/5.jpg")    
+
+
+
+
+
+
 

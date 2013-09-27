@@ -1,0 +1,6 @@
+#!/bin/bash
+
+compass watch &
+node app &
+
+echo App is Running!
